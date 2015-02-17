@@ -20,6 +20,10 @@
 					templateUrl: './products/products.html',
 					controller: 'productsController'
 				})
+				.when('/checkout/basket', {
+					templateUrl: './cart/checkout.html',
+					controller: 'cartController'
+				})
 				.otherwise({
 					redirectTo: '/'
 				});

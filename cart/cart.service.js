@@ -10,7 +10,8 @@
 			}
 			$rootScope.cartProducts[product.id] = { // uses product.name as an ID for the object
 				product: product,
-				quantity: quantity
+				quantity: quantity,
+				total: product.price * quantity
 			}
 		}
 
@@ -18,9 +19,14 @@
 			delete $rootScope.cartProducts[product.product.id]; // function to delete object from collection
 		}
 
+		var updateQuantity = function(item, quantity){
+			$rootScope.cartProducts[item.product.id].quantity = quantity;
+		}
+
 		return {
 			addProductToCart: addProductToCart,
-			removeProduct: removeProduct
+			removeProduct: removeProduct,
+			updateQuantity: updateQuantity
 		}
 
 	}

@@ -1,14 +1,7 @@
 <div class="row" ng-controller="productsController">
 	<div class="col-md-2">
 		
-		<div class="filter">
-			<h2>Filter</h2>
-			<ul>
-				<li ng-repeat="category in categories">
-					<input type="checkbox" ng-click="categoryChange(category.name)" /> {{ category.name }}
-				</li>
-			</ul>
-		</div>
+		<ng-include src="'./includes/filters.html'"></ng-include>
 
 		<ng-include src="'./cart/cart-min.html'"></ng-include>
 
@@ -18,8 +11,10 @@
 			<ul class="product-overview">
 				<li class="col-md-4 col-sm-6 col-xs-6" ng-repeat="product in products | filter:categoryFilter">
 					<div class="item">
-						<h3>{{ product.name }}</h3>
-						<img ng-src="images/{{ product.image }}" alt="" />
+						<a ng-href="#/product/{{product.id}}">
+							<h3>{{ product.name }}</h3>
+							<img ng-src="images/{{ product.image }}" alt="" />
+						</a>
 						<p>
 							<br />{{ product.description }}<br /><br />
 							<b>Price:</b> {{product.price}} DKK<br /><br />

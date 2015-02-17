@@ -2,7 +2,7 @@
 	{
 		"id": "macbook-pro-retina-15",
 		"name": "MacBook Pro Retina 15",
-		"price": "14990,00",
+		"price": "14990",
 		"description": "Quality computer for creative work.",
 		"image": "macbook.jpg",
 		"category": "Computers"
@@ -10,7 +10,7 @@
 	{
 		"id": "maxbook-air-13",
 		"name": "MacBook Air 13",
-		"price": "10990,00",
+		"price": "10990",
 		"description": "Small but powerful computer.",
 		"image": "macbook.jpg",
 		"category": "Computers"
