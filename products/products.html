@@ -1,0 +1,62 @@
+<div class="row" ng-controller="productsController">
+	<div class="col-md-2">
+		
+		<div class="filter">
+			<h2>Filter</h2>
+			<ul>
+				<li ng-repeat="category in categories">
+					<input type="checkbox" ng-click="categoryChange(category.name)" /> {{ category.name }}
+				</li>
+			</ul>
+		</div>
+
+		<div class="cart" ng-controller="cartController">
+			<h2>Cart</h2>
+			<table class="table table-bordered table-striped">
+				<tr>
+					<th></th>
+					<th>Qty</th>
+					<th>Name</th>
+				</tr>
+				<tr ng-repeat="item in cartProducts">
+					<td>
+						<form ng-submit="removeFromCart(item)">
+							<button type="submit" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+						</form>
+					</td>
+					<td>{{ item.quantity }}</td>
+					<td>{{ item.product.name }}</td>
+				</tr>
+			</table>
+			<a href="#" class="btn btn-block btn-success">Checkout</a>
+		</div>
+
+	</div>
+	<div class="col-md-10">
+		<div class="row">
+			<ul class="product-overview">
+				<li class="col-md-4 col-sm-6 col-xs-6" ng-repeat="product in products | filter:categoryFilter">
+					<div class="item">
+						<h3>{{ product.name }}</h3>
+						<img src="images/{{ product.image }}" alt="" />
+						<p>
+							<br />{{ product.description }}<br /><br />
+							<b>Price:</b> {{product.price}} DKK<br /><br />
+						</p>
+
+						<div class="row">
+
+							<div class="col-sm-12">
+								<form ng-submit="addToCart(product)">
+									<input type="number" ng-model="quantity" value="1" />
+									<button type="submit" class="btn btn-success">Add to Cart</button>
+								</form>
+							</div>
+
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
