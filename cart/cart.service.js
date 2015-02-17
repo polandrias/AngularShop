@@ -5,22 +5,17 @@
 	var cartService = function($http, $rootScope){
 
 		var addProductToCart = function(product, quantity){
-			if($rootScope.cartProducts[product.name]){
+			if($rootScope.cartProducts[product.id]){
 				console.log("exists");
 			}
-			$rootScope.cartProducts[product.name] = { // uses product.name as an ID for the object
+			$rootScope.cartProducts[product.id] = { // uses product.name as an ID for the object
 				product: product,
 				quantity: quantity
 			}
 		}
 
 		var removeProduct = function(product){
-			var i = product.indexOf($rootScope.cartProducts);
-			console.log(i);
-			//console.log($rootScope.cartProducts);
-			if(i > -1){
-				$scope.cartProducts.splice(i, 1);
-			}
+			delete $rootScope.cartProducts[product.product.id]; // function to delete object from collection
 		}
 
 		return {

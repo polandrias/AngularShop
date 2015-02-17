@@ -1,5 +1,6 @@
 [
 	{
+		"id": "macbook-pro-retina-15",
 		"name": "MacBook Pro Retina 15",
 		"price": "14990,00",
 		"description": "Quality computer for creative work.",
@@ -7,6 +8,7 @@
 		"category": "Computers"
 	},
 	{
+		"id": "maxbook-air-13",
 		"name": "MacBook Air 13",
 		"price": "10990,00",
 		"description": "Small but powerful computer.",
@@ -14,6 +16,7 @@
 		"category": "Computers"
 	},
 	{
+		"id": "ipad-air-2-32gb",
 		"name": "iPad Air 2 (32GB)",
 		"price": "4990",
 		"description": "The whole internet in your palm.",
